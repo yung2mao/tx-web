@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>cn.whitetown</groupId>
+  <artifactId>tx-web</artifactId>
+  <version>${reversion}-${type}</version>
+  <modules>
+    <module>tx-web-base-util</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>tx-web</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.whitetown.cn</url>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.6.RELEASE</version>
+  </parent>
+
+  <properties>
+    <reversion>0.0.1</reversion>
+    <type>SNAPSHOT</type>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <hutool.version>5.3.10</hutool.version>
+    <fastjson.version>1.2.58</fastjson.version>
+    <lombok.version>1.18.8</lombok.version>
+    <junit.version>4.13.1</junit.version>
+  </properties>
+
+
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- hutool-all -->
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+      </dependency>
+      <!-- json -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
+      <!--lombok -->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
+      <!--junit-->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
