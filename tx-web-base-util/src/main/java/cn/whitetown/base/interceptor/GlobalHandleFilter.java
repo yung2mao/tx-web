@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 全局过滤器，跨域处理在生产环境删除
+ * 跨域处理，生产环境不使用
  * @author GrainRain
  * @date 2020/06/13 16:40
  **/

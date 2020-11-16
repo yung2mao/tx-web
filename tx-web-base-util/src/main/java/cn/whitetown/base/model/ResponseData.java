@@ -1,6 +1,6 @@
 package cn.whitetown.base.model;
 
-import cn.whitetown.dogbase.common.entity.enums.ResponseStatusEnum;
+import cn.whitetown.base.enums.ResponseStatusEnum;
 import com.alibaba.fastjson.JSON;
 
 /**
@@ -12,11 +12,11 @@ public class ResponseData<T> {
     /**
      * 状态码
      */
-    private Integer status;
+    private String statusCode;
     /**
      * 携带附加信息
      */
-    private String statusName;
+    private String message;
     /**
      * 携带数据
      */
@@ -24,19 +24,19 @@ public class ResponseData<T> {
 
     /**
      * 自定义返回数据构造方法
-     * @param status
-     * @param statusName
+     * @param statusCode
+     * @param message
      * @param data
      */
-    private ResponseData(Integer status, String statusName, T data){
-        this.status=status;
-        this.statusName = statusName;
+    private ResponseData(String statusCode, String message, T data){
+        this.statusCode=statusCode;
+        this.message = message;
         this.data=data;
     }
 
     private ResponseData(ResponseStatusEnum responseStatusEnum, T data) {
-        this.status = responseStatusEnum.getStatus();
-        this.statusName = responseStatusEnum.getStatusName();
+        this.statusCode = responseStatusEnum.getStatusCode();
+        this.message = responseStatusEnum.getMessage();
         this.data = data;
     }
 
@@ -45,14 +45,14 @@ public class ResponseData<T> {
 
     /**
      * 获取响应消息的方法
-     * @param status 状态码
+     * @param statusCode 状态码
      * @param msg 附加信息
      * @param data 响应数据
      * @param <T> 类型
      * @return
      */
-    public static <T> ResponseData<T> build(Integer status, String msg, T data){
-        return new ResponseData<>(status, msg, data);
+    public static <T> ResponseData<T> build(String statusCode, String msg, T data){
+        return new ResponseData<>(statusCode, msg, data);
     }
 
     /**
@@ -75,38 +75,28 @@ public class ResponseData<T> {
 
     /**
      * 返回失败的响应消息
-     * @param responseStatusEnum 错误类别枚举
+     * @param statusCode
+     * @param message
      * @return
      */
-    public static ResponseData fail(ResponseStatusEnum responseStatusEnum){
-        return new ResponseData(responseStatusEnum,null);
+    public static ResponseData fail(String statusCode, String message){
+        return new ResponseData(statusCode, message,null);
     }
 
-    /**
-     * 获取响应消息
-     * @param responseStatusEnum
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> ResponseData<T> getInstance(ResponseStatusEnum responseStatusEnum, T data){
-        return new ResponseData<>(responseStatusEnum,data);
+    public String getStatusCode() {
+        return statusCode;
     }
 
-    public Integer getStatus() {
-        return status;
+    public void setStatusCode(String statusCode) {
+        this.statusCode = statusCode;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public String getMessage() {
+        return message;
     }
 
-    public String getStatusName() {
-        return statusName;
-    }
-
-    public void setStatusName(String statusName) {
-        this.statusName = statusName;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public T getData() {

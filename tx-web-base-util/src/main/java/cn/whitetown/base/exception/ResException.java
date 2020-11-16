@@ -6,16 +6,16 @@ package cn.whitetown.base.exception;
  *
  * @author taixian
  */
-public abstract class AbstractResException extends RuntimeException{
+public abstract class ResException extends RuntimeException{
     protected String statusCode;
     protected String message;
 
-    public AbstractResException(String statusCode, String message) {
+    public ResException(String statusCode, String message) {
         this.statusCode = statusCode;
         this.message = message;
     }
 
-    public AbstractResException(String message) {
+    public ResException(String message) {
         this("400", message);
     }
 

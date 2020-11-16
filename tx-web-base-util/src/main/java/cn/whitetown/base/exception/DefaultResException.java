@@ -7,7 +7,7 @@ import cn.whitetown.base.enums.ResponseStatusEnum;
  * @Author: taixian
  * @Date: created in 2020/11/15
  */
-public class DefaultResException extends AbstractResException {
+public class DefaultResException extends ResException {
 
     private ResponseStatusEnum statusEnum;
 
