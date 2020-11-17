@@ -1,5 +1,6 @@
 package cn.whitetown.base.exception;
 
+import cn.whitetown.base.exception.define.DefaultResException;
 import cn.whitetown.base.model.ErrorResponse;
 import cn.whitetown.base.model.ResponseData;
 import com.alibaba.fastjson.JSON;
