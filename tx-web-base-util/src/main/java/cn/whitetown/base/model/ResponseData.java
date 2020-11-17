@@ -24,9 +24,9 @@ public class ResponseData<T> {
 
     /**
      * 自定义返回数据构造方法
-     * @param statusCode
-     * @param message
-     * @param data
+     * @param statusCode 状态码
+     * @param message 附加信息
+     * @param data 返回数据
      */
     private ResponseData(String statusCode, String message, T data){
         this.statusCode=statusCode;
@@ -44,7 +44,7 @@ public class ResponseData<T> {
     }
 
     /**
-     * 获取响应消息的方法
+     * 构建response信息
      * @param statusCode 状态码
      * @param msg 附加信息
      * @param data 响应数据
@@ -56,10 +56,10 @@ public class ResponseData<T> {
     }
 
     /**
-     * 默认获取成功时的响应消息
-     * @param data
-     * @param <T>
-     * @return
+     * success
+     * @param data 数据项
+     * @param <T> 类型
+     * @return res
      */
     public static <T> ResponseData<T> ok(T data){
         return new ResponseData<>(ResponseStatusEnum.SUCCESS, data);
@@ -67,7 +67,7 @@ public class ResponseData<T> {
 
     /**
      * 不携带数据的成功时响应
-     * @return
+     * @return res
      */
     public static ResponseData ok(){
         return new ResponseData(ResponseStatusEnum.SUCCESS,null);
@@ -75,9 +75,9 @@ public class ResponseData<T> {
 
     /**
      * 返回失败的响应消息
-     * @param statusCode
-     * @param message
-     * @return
+     * @param statusCode 状态码
+     * @param message 附加消息
+     * @return res
      */
     public static ResponseData fail(String statusCode, String message){
         return new ResponseData(statusCode, message,null);

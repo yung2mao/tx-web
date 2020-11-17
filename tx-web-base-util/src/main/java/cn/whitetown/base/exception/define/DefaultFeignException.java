@@ -1,6 +1,7 @@
-package cn.whitetown.base.exception;
+package cn.whitetown.base.exception.define;
 
 import cn.whitetown.base.enums.ResponseStatusEnum;
+import cn.whitetown.base.exception.WhFeignException;
 
 /**
  * 默认内部调用异常实现

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 分页结果信息
+ * 分页返回数据
  * @author GrainRain
  * @date 2020/05/27 21:34
  */
@@ -18,15 +18,15 @@ public class ResponsePage<T> {
     /**
      * 查询到的总条数
      */
-    private Long total;
+    private long total;
     /**
      * 查询第几页
      */
-    private Long page;
+    private int page;
     /**
      * 查询多少条
      */
-    private Long rows;
+    private int size;
     /**
      * 查询的结果信息
      */
@@ -35,15 +35,20 @@ public class ResponsePage<T> {
     public ResponsePage() {
     }
 
-    public ResponsePage(Long page, Long rows, Long total, List<T> resultList) {
+    private ResponsePage(int page, int size, long total, List<T> resultList) {
         this.page = page;
-        this.rows = rows;
+        this.size = size;
         this.total = total;
         this.resultList = resultList;
     }
     
-    public static <T> ResponsePage<T> createPage(Long page, Long rows, Long total, List<T> resultList){
+    public static <T> ResponsePage<T> createPage(int page, int rows, long total, List<T> resultList){
         return new ResponsePage<>(page,rows,total,resultList);
+    }
+
+    public static <T> ResponsePage<T> createPage(PageQuery pageQuery, long total, List<T> resultList) {
+        return new ResponsePage<>(pageQuery.getPage(),
+                pageQuery.getSize(),total, resultList);
     }
 
     @Override

@@ -7,8 +7,8 @@ import cn.whitetown.base.enums.ResponseStatusEnum;
  * @Author: taixian
  * @Date: created in 2020/11/16
  */
-public class WhFeignException extends RuntimeException{
-    private String statusCode;
+public abstract class WhFeignException extends RuntimeException{
+    protected String statusCode;
 
     public WhFeignException(String statusCode, String message) {
         super(message);

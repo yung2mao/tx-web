@@ -8,11 +8,10 @@ package cn.whitetown.base.exception;
  */
 public abstract class ResException extends RuntimeException{
     protected String statusCode;
-    protected String message;
 
     public ResException(String statusCode, String message) {
+        super(message);
         this.statusCode = statusCode;
-        this.message = message;
     }
 
     public ResException(String message) {
@@ -21,10 +20,5 @@ public abstract class ResException extends RuntimeException{
 
     public String getStatusCode() {
         return statusCode;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
     }
 }
