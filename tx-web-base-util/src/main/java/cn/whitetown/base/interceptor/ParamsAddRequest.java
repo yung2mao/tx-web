@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
 /**
+ * request封装，传入额外参数
  * @Author: taixian
  * @Date: created in 2020/11/17
  */

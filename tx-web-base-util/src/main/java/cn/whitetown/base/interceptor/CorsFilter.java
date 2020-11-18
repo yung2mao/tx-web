@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author GrainRain
  * @date 2020/06/13 16:40
  **/
-public class GlobalHandleFilter implements Filter {
+public class CorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 

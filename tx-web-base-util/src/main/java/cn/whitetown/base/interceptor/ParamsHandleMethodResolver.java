@@ -11,15 +11,16 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
 /**
+ * 请求参数解析器
  * @author taixian
  * @date 2020-11-17
  * @param <T>
  */
-public class ParamsAddMethodResolver<T> implements HandlerMethodArgumentResolver {
+public class ParamsHandleMethodResolver<T> implements HandlerMethodArgumentResolver {
 
     private Class<T> claz;
 
-    public ParamsAddMethodResolver(Class<T> claz) {
+    public ParamsHandleMethodResolver(Class<T> claz) {
         this.claz = claz;
     }
 
@@ -37,6 +38,7 @@ public class ParamsAddMethodResolver<T> implements HandlerMethodArgumentResolver
             return paramsAddRequest.getParams();
         }else {
             ParamsAddRequest paramsAddRequest = (ParamsAddRequest) (request);
+            assert paramsAddRequest != null;
             return paramsAddRequest.getParams();
         }
     }
