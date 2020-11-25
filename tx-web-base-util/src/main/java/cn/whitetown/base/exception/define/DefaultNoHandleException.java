@@ -1,16 +1,16 @@
 package cn.whitetown.base.exception.define;
 
 import cn.whitetown.base.enums.ResponseStatusEnum;
-import cn.whitetown.base.exception.WhFeignException;
+import cn.whitetown.base.exception.NoHandleException;
 
 /**
  * 默认内部调用异常实现
  * @Author: taixian
  * @Date: created in 2020/11/16
  */
-public class DefaultFeignException extends WhFeignException {
+public class DefaultNoHandleException extends NoHandleException {
 
-    public DefaultFeignException(ResponseStatusEnum statusEnum) {
+    public DefaultNoHandleException(ResponseStatusEnum statusEnum) {
         super(statusEnum.getStatusCode(), statusEnum.getMessage());
     }
 }

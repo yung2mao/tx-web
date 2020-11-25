@@ -1,6 +1,5 @@
 package cn.whitetown.base.exception;
 
-import cn.whitetown.base.exception.define.DefaultResException;
 import cn.whitetown.base.model.ErrorResponse;
 import cn.whitetown.base.model.ResponseData;
 import com.alibaba.fastjson.JSON;
@@ -34,9 +33,9 @@ public class ControllerExceptionHandler {
         return failResult;
     }
 
-    @ExceptionHandler(value = WhFeignException.class)
+    @ExceptionHandler(value = NoHandleException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorResponse customFeignException(WhFeignException ex) {
+    public ErrorResponse customFeignException(NoHandleException ex) {
         ErrorResponse response = ErrorResponse.build(ex.getStatusCode(), ex.getMessage());
         this.errorLog("WhFeignException", response);
         return response;

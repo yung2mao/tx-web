@@ -1,16 +1,14 @@
 package cn.whitetown.base.exception;
 
-import cn.whitetown.base.enums.ResponseStatusEnum;
-
 /**
- * 自定义异常类，内部调用时使用
+ * 不完全处理的异常 - 通常内部调用使用
  * @Author: taixian
  * @Date: created in 2020/11/16
  */
-public abstract class WhFeignException extends RuntimeException{
+public abstract class NoHandleException extends RuntimeException{
     protected String statusCode;
 
-    public WhFeignException(String statusCode, String message) {
+    public NoHandleException(String statusCode, String message) {
         super(message);
         this.statusCode = statusCode;
     }
