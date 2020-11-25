@@ -1,4 +1,4 @@
-package cn.whitetown.base.interceptor;
+package cn.whitetown.base.config;
 
 import org.springframework.http.HttpMethod;
 

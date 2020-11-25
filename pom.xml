@@ -9,6 +9,7 @@
   <version>${reversion}-${type}</version>
   <modules>
     <module>tx-web-base-util</module>
+      <module>tx-web-test-main</module>
   </modules>
   <packaging>pom</packaging>
 

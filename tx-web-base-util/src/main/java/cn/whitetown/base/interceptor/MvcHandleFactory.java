@@ -1,6 +1,7 @@
 package cn.whitetown.base.interceptor;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -11,20 +12,14 @@ import javax.servlet.Filter;
  * @Author: taixian
  * @Date: created in 2020/11/17
  */
-public interface ParamsHandleFactory {
-
-    /**
-     * 获取WebMvcConfigurer
-     * @return
-     */
-    WebMvcConfigurer webMvcConfigurer();
+public interface MvcHandleFactory {
 
     /**
      * 参数处理过滤器
      * @param <T>
      * @return
      */
-    <T> ParamsHandleFilter<T> createParamsHandleFilter();
+    Filter createParamsHandleFilter();
 
     /**
      * 过滤器注册bean
@@ -34,9 +29,10 @@ public interface ParamsHandleFactory {
     FilterRegistrationBean bodyWrapperFilterRegistration(Filter filter);
 
     /**
-     * 获取请求拦截器
+     * 请求参数解析器
      * @return
      */
-    HandlerInterceptor createInterceptor();
+    ParamsHandleMethodResolver handlerMethodArgumentResolver();
+
 
 }
