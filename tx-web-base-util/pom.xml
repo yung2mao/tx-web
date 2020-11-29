@@ -9,7 +9,7 @@
   <parent>
     <groupId>cn.whitetown</groupId>
     <artifactId>tx-web</artifactId>
-    <version>${reversion}-${type}</version>
+    <version>${myversion}-${type}</version>
   </parent>
 
   <name>tx-web-common-util</name>

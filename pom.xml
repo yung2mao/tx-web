@@ -6,10 +6,12 @@
 
   <groupId>cn.whitetown</groupId>
   <artifactId>tx-web</artifactId>
-  <version>${reversion}-${type}</version>
+  <version>${myversion}-${type}</version>
   <modules>
     <module>tx-web-base-util</module>
       <module>tx-web-test-main</module>
+      <module>tx-web-boot</module>
+    <module>tx-web-cloud</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -24,7 +26,7 @@
   </parent>
 
   <properties>
-    <reversion>0.0.1</reversion>
+    <myversion>0.0.1</myversion>
     <type>SNAPSHOT</type>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -39,6 +41,12 @@
 
   <dependencyManagement>
     <dependencies>
+      <!--web-common-->
+      <dependency>
+        <groupId>cn.whitetown</groupId>
+        <artifactId>tx-web-common-util</artifactId>
+        <version>${myversion}-${type}</version>
+      </dependency>
       <!-- hutool-all -->
       <dependency>
         <groupId>cn.hutool</groupId>

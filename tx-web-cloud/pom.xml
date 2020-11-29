@@ -4,9 +4,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>tx-web-test-main</artifactId>
+  <artifactId>tx-web-cloud</artifactId>
 
-  <name>tx-web-test-main</name>
+  <name>tx-web-cloud</name>
 
   <parent>
     <groupId>cn.whitetown</groupId>
@@ -21,15 +21,12 @@
   </properties>
 
   <dependencies>
+
     <dependency>
-      <groupId>cn.whitetown</groupId>
-      <artifactId>tx-web-boot</artifactId>
-      <version>${myversion}-${type}</version>
-    </dependency>
-    <!--redis-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
