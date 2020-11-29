@@ -6,7 +6,9 @@ import cn.whitetown.web.web.base.util.WhiteToolUtil;
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.data.redis.core.DefaultTypedTuple;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -30,6 +32,15 @@ public class RedisSortedSetManagerImpl implements RedisSortedSetManager {
         if(timeout > 0) {
             redisTemplate.expire(key, timeout, timeUnit);
         }
+    }
+
+    @Override
+    public <E> void save(String key, Map<E, Double> eleScoreMap, long timeout, TimeUnit timeUnit) {
+        assert key != null && eleScoreMap != null;
+        Set<ZSetOperations.TypedTuple<String>> set = new HashSet<>();
+        eleScoreMap.forEach((k, v) -> set.add(new DefaultTypedTuple<>(JSON.toJSONString(k),v)));
+        redisTemplate.boundZSetOps(key).add(set);
+        redisTemplate.expire(key, timeout, timeUnit);
     }
 
     @Override

@@ -56,6 +56,16 @@ public interface RedisBaseManager {
     <T> void save(String key, T value, Long expireSeconds);
 
     /**
+     * 保存元素
+     * @param key
+     * @param value
+     * @param expire
+     * @param timeUnit
+     * @param <T>
+     */
+    <T> void save(String key, T value, Long expire, TimeUnit timeUnit);
+
+    /**
      * 批量缓存 - String结构
      * @param map 需要缓存的数据 key-value
      * @param timeout 超时时间

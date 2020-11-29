@@ -1,6 +1,7 @@
 package cn.whitetown.web.redis.manager;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -20,6 +21,16 @@ public interface RedisSortedSetManager {
      * @param <E> 泛型
      */
     <E> void save(String key, E ele, double score, long timeout, TimeUnit timeUnit);
+
+    /**
+     * 批量存储数据到zset结构
+     * @param key key
+     * @param eleScoreMap 元素及评分
+     * @param timeout 超时时间
+     * @param timeUnit 单位
+     * @param <E> 泛型
+     */
+    <E> void save(String key, Map<E,Double> eleScoreMap, long timeout, TimeUnit timeUnit);
 
     /**
      * 获取评分范围内的数据

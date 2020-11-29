@@ -59,9 +59,14 @@ public class RedisBaseManagerImpl implements RedisBaseManager {
 
     @Override
     public <T> void save(String key, T value, Long expireSecond) {
+        this.save(key, value, expireSecond, TimeUnit.SECONDS);
+    }
+
+    @Override
+    public <T> void save(String key, T value, Long expire, TimeUnit timeUnit) {
         String data = JSON.toJSONString(value);
-        assert key != null && expireSecond != null;
-        redisTemplate.opsForValue().set(key,data,expireSecond, TimeUnit.SECONDS);
+        assert key != null && expire != null && timeUnit != null;
+        redisTemplate.opsForValue().set(key,data,expire, timeUnit);
     }
 
     @Override
