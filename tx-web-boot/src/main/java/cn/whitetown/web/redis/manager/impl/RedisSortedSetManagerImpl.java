@@ -2,7 +2,7 @@ package cn.whitetown.web.redis.manager.impl;
 
 import cn.whitetown.web.config.RedisTemplateConfig;
 import cn.whitetown.web.redis.manager.RedisSortedSetManager;
-import cn.whitetown.web.web.base.util.WhiteToolUtil;
+import cn.whitetown.web.base.util.WhiteToolUtil;
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;

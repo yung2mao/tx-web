@@ -1,9 +1,9 @@
 package cn.whitetown.web.test.interceptor;
 
 import cn.whitetown.web.test.model.UserInfo;
-import cn.whitetown.web.web.base.interceptor.MvcHandleFactory;
-import cn.whitetown.web.web.base.interceptor.ParamsHandleFilter;
-import cn.whitetown.web.web.base.interceptor.ParamsHandleMethodResolver;
+import cn.whitetown.web.base.interceptor.MvcHandleFactory;
+import cn.whitetown.web.base.interceptor.ParamsHandleFilter;
+import cn.whitetown.web.base.interceptor.ParamsHandleMethodResolver;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 
 import javax.servlet.Filter;

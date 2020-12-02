@@ -1,6 +1,6 @@
 package cn.whitetown.web.redis.manager.impl;
 
-import cn.whitetown.web.web.base.util.WhiteToolUtil;
+import cn.whitetown.web.base.util.WhiteToolUtil;
 import cn.whitetown.web.config.RedisTemplateConfig;
 import cn.whitetown.web.redis.manager.RedisBaseManager;
 import com.alibaba.fastjson.JSON;

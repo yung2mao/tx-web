@@ -33,6 +33,8 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <hutool.version>5.3.10</hutool.version>
     <fastjson.version>1.2.58</fastjson.version>
+    <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
+    <springCloud.alibaba.version>2.1.0.RELEASE</springCloud.alibaba.version>
     <lombok.version>1.18.8</lombok.version>
     <junit.version>4.13.1</junit.version>
   </properties>
@@ -46,6 +48,28 @@
         <groupId>cn.whitetown</groupId>
         <artifactId>tx-web-common-util</artifactId>
         <version>${myversion}-${type}</version>
+      </dependency>
+      <!--web-boot-->
+      <dependency>
+        <groupId>cn.whitetown</groupId>
+        <artifactId>tx-web-boot</artifactId>
+        <version>${myversion}-${type}</version>
+      </dependency>
+      <!--spring-cloud-->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring.cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!--spring-cloud-alibaba-->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba</artifactId>
+        <version>${springCloud.alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <!-- hutool-all -->
       <dependency>

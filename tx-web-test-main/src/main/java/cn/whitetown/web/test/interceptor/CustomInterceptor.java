@@ -1,7 +1,7 @@
 package cn.whitetown.web.test.interceptor;
 
-import cn.whitetown.web.web.base.interceptor.ParamsAddRequest;
-import cn.whitetown.web.web.base.interceptor.WhHandlerInterceptor;
+import cn.whitetown.web.base.interceptor.ParamsAddRequest;
+import cn.whitetown.web.base.interceptor.WhHandlerInterceptor;
 import cn.whitetown.web.test.model.UserInfo;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
 package cn.whitetown.web.test.interceptor;
 
-import cn.whitetown.web.web.base.interceptor.MvcHandleFactory;
-import cn.whitetown.web.web.base.interceptor.ParamsHandleMethodResolver;
+import cn.whitetown.web.base.interceptor.MvcHandleFactory;
+import cn.whitetown.web.base.interceptor.ParamsHandleMethodResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

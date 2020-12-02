@@ -21,12 +21,28 @@
   </properties>
 
   <dependencies>
-
+    <!--springboot common-->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <groupId>cn.whitetown</groupId>
+      <artifactId>tx-web-boot</artifactId>
+    </dependency>
+    <!--spring cloud-->
+
+    <!--registry center-->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+    <!--config-->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+    </dependency>
+    <!--feign-->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-openfeign</artifactId>
+        <scope>provided</scope>
     </dependency>
   </dependencies>
 

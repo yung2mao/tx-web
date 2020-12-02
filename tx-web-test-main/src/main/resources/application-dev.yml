@@ -1,0 +1,3 @@
+logging:
+  file: /home/logs/web_logs
+  path: E:/logs/web_logs
