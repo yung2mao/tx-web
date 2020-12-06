@@ -21,22 +21,22 @@ import java.util.Locale;
  * @Date: created in 2020/11/18
  */
 @Configuration
-public class DefaultMvcConfigurer implements WebMvcConfigurer {
+public class BasicMvcConfigurer implements WebMvcConfigurer {
 
     private HandlerMethodArgumentResolver handlerMethodArgumentResolver;
 
     @Autowired
-    private InterceptorInit interceptorInit;
+    private InterceptorConfig interceptorConfig;
 
     @Autowired
     private ApplicationContext context;
 
-    public DefaultMvcConfigurer() {
+    public BasicMvcConfigurer() {
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        List<WhHandlerInterceptor> interceptors = interceptorInit.allInterceptors();
+        List<WhHandlerInterceptor> interceptors = interceptorConfig.allInterceptors();
         interceptors.forEach(interceptor -> {
             registry.addInterceptor(interceptor)
                     .addPathPatterns(interceptor.includePathPatterns())

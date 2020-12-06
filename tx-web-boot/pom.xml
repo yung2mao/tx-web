@@ -5,13 +5,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>tx-web-boot</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
 
   <name>tx-web-boot</name>
 
   <parent>
     <groupId>cn.whitetown</groupId>
     <artifactId>tx-web</artifactId>
-    <version>${myversion}-${type}</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <properties>

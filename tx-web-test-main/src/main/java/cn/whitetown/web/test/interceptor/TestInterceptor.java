@@ -1,5 +1,6 @@
 package cn.whitetown.web.test.interceptor;
 
+import cn.whitetown.web.base.interceptor.AbstractMvcHandleFactory;
 import cn.whitetown.web.test.model.UserInfo;
 import cn.whitetown.web.base.interceptor.MvcHandleFactory;
 import cn.whitetown.web.base.interceptor.ParamsHandleFilter;
@@ -12,7 +13,7 @@ import javax.servlet.Filter;
  * @Author: taixian
  * @Date: created in 2020/11/18
  */
-public class TestInterceptor implements MvcHandleFactory {
+public class TestInterceptor extends AbstractMvcHandleFactory {
 
     public TestInterceptor() {
     }
@@ -20,15 +21,6 @@ public class TestInterceptor implements MvcHandleFactory {
     @Override
     public Filter createParamsHandleFilter() {
         return new ParamsHandleFilter<UserInfo>();
-    }
-
-    @Override
-    public FilterRegistrationBean bodyWrapperFilterRegistration(Filter filter) {
-        FilterRegistrationBean registration = new FilterRegistrationBean();
-        registration.setFilter(filter);
-        registration.addUrlPatterns("/*");
-        registration.setName("bodyWrapperFilter");
-        return registration;
     }
 
     @Override

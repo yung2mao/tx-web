@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  * @Date: created in 2020/11/24
  */
 @Component
-public class InterceptorInit {
+public class InterceptorConfig {
 
     @Autowired
     private ApplicationContext context;

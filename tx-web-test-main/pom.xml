@@ -11,7 +11,7 @@
   <parent>
     <groupId>cn.whitetown</groupId>
     <artifactId>tx-web</artifactId>
-    <version>${myversion}-${type}</version>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -23,13 +23,8 @@
   <dependencies>
     <dependency>
       <groupId>cn.whitetown</groupId>
-      <artifactId>tx-web-boot</artifactId>
-      <version>${myversion}-${type}</version>
-    </dependency>
-    <!--redis-->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
+      <artifactId>tx-web-cloud</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

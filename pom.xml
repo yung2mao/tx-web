@@ -6,7 +6,7 @@
 
   <groupId>cn.whitetown</groupId>
   <artifactId>tx-web</artifactId>
-  <version>${myversion}-${type}</version>
+  <version>0.0.1-SNAPSHOT</version>
   <modules>
     <module>tx-web-base-util</module>
       <module>tx-web-test-main</module>
@@ -36,6 +36,9 @@
     <spring.cloud.version>Greenwich.RELEASE</spring.cloud.version>
     <springCloud.alibaba.version>2.1.0.RELEASE</springCloud.alibaba.version>
     <lombok.version>1.18.8</lombok.version>
+    <mybais-plus.version>3.4.1</mybais-plus.version>
+    <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+    <druid.version>1.1.21</druid.version>
     <junit.version>4.13.1</junit.version>
   </properties>
 
@@ -88,6 +91,24 @@
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
+      </dependency>
+      <!--Mybatis plus-->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybais-plus.version}</version>
+      </dependency>
+      <!--mysql jdbc connect-->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql-connector-java.version}</version>
+      </dependency>
+      <!--连接池-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
       </dependency>
       <!--junit-->
       <dependency>

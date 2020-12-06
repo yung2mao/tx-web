@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.*;
  **/
 @ControllerAdvice
 @ResponseBody
-public class ControllerExceptionHandler {
+public class BasicControllerExceptionHandler {
 
-    private Logger logger = LoggerFactory.getLogger(ControllerExceptionHandler.class);
+    private Logger logger = LoggerFactory.getLogger(BasicControllerExceptionHandler.class);
 
     /**
      * 自定义异常类的处理
