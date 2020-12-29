@@ -44,6 +44,18 @@
         <artifactId>spring-cloud-starter-openfeign</artifactId>
         <scope>provided</scope>
     </dependency>
+    <!-- SpringCloud ailibaba sentinel-datasource-nacos-->
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-datasource-nacos</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- SpringCloud ailibaba sentinel-->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
 </project>

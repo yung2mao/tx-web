@@ -43,7 +43,7 @@ public class LocalBlockingQueue<E>{
 
     /**
      * topic
-     * @return
+     * @return -
      */
     public String getTopic() {
         return topic;
