@@ -42,4 +42,19 @@ public interface RedisSortedSetManager {
      * @return
      */
     <E> List<E> get(String key, double minScore, double maxScore, Class<E> claz);
+
+    /**
+     * 按评分删除数据
+     * @param key key
+     * @param minScore 最小score
+     * @param maxScore 最大score
+     */
+    void removeByScore(String key, Integer minScore, Integer maxScore);
+
+    /**
+     * 删除元素
+     * @param key key
+     * @param elements 元素集
+     */
+    void removeElement(String key,Object ... elements);
 }

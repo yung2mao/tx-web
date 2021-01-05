@@ -50,4 +50,16 @@ public class RedisSortedSetManagerImpl implements RedisSortedSetManager {
         if(results == null) { return new ArrayList<>(); }
         return WhiteToolUtil.textList2ObjList(new ArrayList<>(results), claz);
     }
+
+    @Override
+    public void removeByScore(String key, Integer minScore, Integer maxScore) {
+        assert key != null;
+        redisTemplate.boundZSetOps(key).removeRangeByScore(minScore, maxScore);
+    }
+
+    @Override
+    public void removeElement(String key, Object ... elements) {
+        assert key != null;
+        redisTemplate.boundZSetOps(key).remove(elements);
+    }
 }
