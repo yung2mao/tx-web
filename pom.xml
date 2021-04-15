@@ -39,6 +39,7 @@
     <mybais-plus.version>3.4.1</mybais-plus.version>
     <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
     <druid.version>1.1.21</druid.version>
+    <swagger-ui.version>2.9.2</swagger-ui.version>
     <junit.version>4.13.1</junit.version>
   </properties>
 
@@ -109,6 +110,18 @@
         <groupId>com.alibaba</groupId>
         <artifactId>druid</artifactId>
         <version>${druid.version}</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>${swagger-ui.version}</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>${swagger-ui.version}</version>
       </dependency>
       <!--junit-->
       <dependency>

@@ -28,7 +28,7 @@ public class RedisSortedSetManagerImpl implements RedisSortedSetManager {
     @Override
     public <E> void save(String key, E ele, double score, long timeout, TimeUnit timeUnit) {
         assert key != null && ele != null;
-        redisTemplate.boundZSetOps(key).add(JSON.toJSONString(ele), score);
+        redisTemplate.boundZSetOps(key).add(ele instanceof String ? (String)ele : JSON.toJSONString(ele), score);
         if(timeout > 0) {
             redisTemplate.expire(key, timeout, timeUnit);
         }
@@ -38,7 +38,7 @@ public class RedisSortedSetManagerImpl implements RedisSortedSetManager {
     public <E> void save(String key, Map<E, Double> eleScoreMap, long timeout, TimeUnit timeUnit) {
         assert key != null && eleScoreMap != null;
         Set<ZSetOperations.TypedTuple<String>> set = new HashSet<>();
-        eleScoreMap.forEach((k, v) -> set.add(new DefaultTypedTuple<>(JSON.toJSONString(k),v)));
+        eleScoreMap.forEach((k, v) -> set.add(new DefaultTypedTuple<>(k instanceof String ? (String)k : JSON.toJSONString(k),v)));
         redisTemplate.boundZSetOps(key).add(set);
         redisTemplate.expire(key, timeout, timeUnit);
     }
@@ -46,7 +46,18 @@ public class RedisSortedSetManagerImpl implements RedisSortedSetManager {
     @Override
     public <E> List<E> get(String key, double minScore, double maxScore, Class<E> claz) {
         assert  key != null && claz != null;
-        Set<String> results = redisTemplate.boundZSetOps(key).rangeByScore(minScore, maxScore);
+        Set<String> results = redisTemplate.boundZSetOps(key).reverseRangeByScore(minScore, maxScore);
+        if(results == null) { return new ArrayList<>(); }
+        return WhiteToolUtil.textList2ObjList(new ArrayList<>(results), claz);
+    }
+
+    @Override
+    public <E> List<E> topNumber(String key, long size, Class<E> claz) {
+        assert key != null && claz != null;
+        if(size <= 0) {
+            return new ArrayList<>();
+        }
+        Set<String> results = redisTemplate.boundZSetOps(key).reverseRange(0,size - 1);
         if(results == null) { return new ArrayList<>(); }
         return WhiteToolUtil.textList2ObjList(new ArrayList<>(results), claz);
     }

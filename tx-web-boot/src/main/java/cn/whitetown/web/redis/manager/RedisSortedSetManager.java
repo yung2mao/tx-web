@@ -39,9 +39,19 @@ public interface RedisSortedSetManager {
      * @param maxScore 最高评分
      * @param claz 返回类型
      * @param <E> 泛型
-     * @return
+     * @return -
      */
     <E> List<E> get(String key, double minScore, double maxScore, Class<E> claz);
+
+    /**
+     * 获取前几名的数据
+     * @param key key
+     * @param size 多少名
+     * @param claz 返回类型
+     * @param <E> 类型泛型
+     * @return -
+     */
+    <E> List<E> topNumber(String key, long size, Class<E> claz);
 
     /**
      * 按评分删除数据

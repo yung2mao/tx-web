@@ -61,7 +61,7 @@ public class RedisHashManagerImpl implements RedisHashManager {
 
     @Override
     public <T> void saveEntries(String key, Map<String, T> map, Long expireSeconds) {
-        Map<String, String> saveMap = new HashMap<>();
+        Map<String, String> saveMap = new HashMap<>(4);
         map.forEach((k,v) -> saveMap.put(k,JSON.toJSONString(v)));
         redisTemplate.opsForHash().putAll(key, saveMap);
         if(expireSeconds != null && expireSeconds > 0) {
