@@ -1,5 +1,6 @@
 package cn.whitetown.web.base.exception.define;
 
+import cn.whitetown.web.base.exception.ErrorMessage;
 import cn.whitetown.web.base.exception.NoHandleException;
 import cn.whitetown.web.base.enums.ResponseStatusEnum;
 
@@ -10,7 +11,7 @@ import cn.whitetown.web.base.enums.ResponseStatusEnum;
  */
 public class DefaultNoHandleException extends NoHandleException {
 
-    public DefaultNoHandleException(ResponseStatusEnum statusEnum) {
+    public DefaultNoHandleException(ErrorMessage statusEnum) {
         super(statusEnum.getStatusCode(), statusEnum.getMessage());
     }
 }

@@ -1,6 +1,7 @@
 package cn.whitetown.web.base.exception.define;
 
 import cn.whitetown.web.base.enums.ResponseStatusEnum;
+import cn.whitetown.web.base.exception.ErrorMessage;
 import cn.whitetown.web.base.exception.ResException;
 
 /**
@@ -10,10 +11,8 @@ import cn.whitetown.web.base.exception.ResException;
  */
 public class DefaultResException extends ResException {
 
-    private ResponseStatusEnum statusEnum;
-
-    public DefaultResException(ResponseStatusEnum statusEnum) {
-        super(statusEnum.getStatusCode(), statusEnum.getMessage());
+    public DefaultResException(ErrorMessage errorMessage) {
+        super(errorMessage.getStatusCode(), errorMessage.getMessage());
     }
 
     public DefaultResException(String statusCode, String message) {

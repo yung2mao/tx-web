@@ -1,5 +1,6 @@
 package cn.whitetown.web.base.enums;
 
+import cn.whitetown.web.base.exception.ErrorMessage;
 import com.alibaba.fastjson.JSON;
 
 /**
@@ -7,7 +8,7 @@ import com.alibaba.fastjson.JSON;
  * @author GrainRain
  * @date 2020/05/26 20:14
  */
-public enum ResponseStatusEnum {
+public enum ResponseStatusEnum implements ErrorMessage {
     /*\***************通用类别********************\*/
 
     SUCCESS("200","SUCCESS"),
@@ -29,6 +30,7 @@ public enum ResponseStatusEnum {
         this.message = message;
     }
 
+    @Override
     public String getStatusCode() {
         return statusCode;
     }
@@ -37,6 +39,7 @@ public enum ResponseStatusEnum {
         this.statusCode = statusCode;
     }
 
+    @Override
     public String getMessage() {
         return message;
     }
