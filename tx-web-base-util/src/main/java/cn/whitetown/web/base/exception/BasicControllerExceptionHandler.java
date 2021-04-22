@@ -34,10 +34,18 @@ public class BasicControllerExceptionHandler {
     }
 
     @ExceptionHandler(value = NoHandleException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.OK)
     public ErrorResponse customFeignException(NoHandleException ex) {
         ErrorResponse response = ErrorResponse.build(ex.getStatusCode(), ex.getMessage());
         this.errorLog("WhFeignException", response);
+        return response;
+    }
+
+    @ExceptionHandler(value = Exception.class)
+    @ResponseStatus(HttpStatus.OK)
+    public ErrorResponse otherException(Exception ex) {
+        ErrorResponse response = ErrorResponse.build("400", ex.getMessage());
+        this.errorLog("exception", response);
         return response;
     }
 

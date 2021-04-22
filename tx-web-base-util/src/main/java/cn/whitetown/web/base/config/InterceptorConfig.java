@@ -20,7 +20,7 @@ public class InterceptorConfig {
     @Autowired
     private ApplicationContext context;
 
-    public List<WhHandlerInterceptor> allInterceptors() {
+    List<WhHandlerInterceptor> allInterceptors() {
         Map<String, WhHandlerInterceptor> beans = context.getBeansOfType(WhHandlerInterceptor.class);
         return beans.values().stream()
                 .sorted(Comparator.comparing(WhHandlerInterceptor::sort))
